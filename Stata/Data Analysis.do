@@ -12,7 +12,7 @@ do "../Stata/Treatment Effects.do"
 ** Footnote 12 (power analysis) **
 do "../Stata/Power Analysis.do"
 
-** Subsection 3.1 **
+** Subsection 3.2 **
 do "../Stata/Beliefs and Judgements.do"
 
 ** Appendix A1 **
