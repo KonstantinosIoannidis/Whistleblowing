@@ -13,7 +13,7 @@ do "../Stata/Treatment Effects.do"
 do "../Stata/Power Analysis.do"
 
 ** Subsection 3.2 **
-do "../Stata/Beliefs and Judgements.do"
+do "../Stata/Beliefs Judgements.do"
 
 ** Appendix A1 **
 do "../Stata/Between Participant Pools.do"
