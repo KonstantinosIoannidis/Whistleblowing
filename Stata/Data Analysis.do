@@ -10,7 +10,7 @@ tab study gender if task == 1 & treatment != 2 & round == 1, row column
 do "../Stata/Treatment Effects.do"
 
 ** Footnote 12 (power analysis) **
-// do "../Stata/Power Analysis.do"
+do "../Stata/Power Analysis.do"
 
 ** Subsection 3.1 **
 do "../Stata/Beliefs and Judgements.do"
