@@ -7,8 +7,7 @@ This is the codebook for the "Experimental Data.csv" file.
 | `payoff_final` | Total participant payoff (in pounds) |
 | `sessionlabel` | Session label (28 sessions) |
 | `location` | Location of experimental session (0=Birmingham, 1=Cambridge) |
-| `task` | Whether the members of the public did a task (0=No, 1=Yes) |
-| `treatment` | Experimental treatment (0=Baseline, 1=Competition, 2=Random) |
+| `treatment` | Experimental treatment (0=Baseline, 1=Competition) |
 | `id_in_group` | Participant ID within matching group |
 | `round` | Round of the experiment (12 rounds) |
 | `role` | Role of participant (employee, manager, public) |
