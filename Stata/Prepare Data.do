@@ -1,9 +1,6 @@
 ** Label Dataset **
 label data "Whistleblowing and Competition - Experiment"
 
-** Generate participate index **
-gen index = _n
-
 ** Label variables **
 label variable participantlabel "Participant label"
 label variable participantcode "Participant code"
@@ -47,32 +44,44 @@ label variable age "Age"
 label variable study "Field of study"
 label variable gender "Gender"
 
+** Recode variables **
+rename location location_old
+gen location = 0 if location_old == "Birmingham"
+replace location = 1 if location_old == "Cambridge"
+order location, after(location_old)
+drop location_old
+rename treatment treatment_old
+gen treatment = 0 if treatment_old == "Baseline"
+replace treatment = 1 if treatment_old == "Competition"
+order treatment, after(treatment_old)
+drop treatment_old
+rename study study_old
+gen study = 0 if study_old == "Other"
+replace study = 1 if study_old == "Social Sciences"
+replace study = 2 if study_old == "Natural and Applied Sciences"
+replace study = 3 if study_old == "Humanities"
+order study, after(study_old)
+drop study_old
+rename gender gender_old
+gen gender = 0 if gender_old == "Female"
+replace gender = 1 if gender_old == "Male"
+replace gender = 2 if gender_old == "Other"
+order gender, after(gender_old)
+drop gender_old
+
 ** Label values **
 label define locations 0 "Birmingham" 1 "Cambridge"
 label values location locations
-label define treatments 0 "Baseline" 1 "Competition" 2 "Random"
+label define treatments 0 "Baseline" 1 "Competition"
 label values treatment treatments
 label define studies 0 "Other" 1 "Social Sciences" 2 "Natural and Applied Sciences" 3 "Humanities"
 label values study studies
 label define genders 0 "Female" 1 "Male" 2 "Other"
 label values gender genders
 
-** Normalise Variables **
-egen whistle_total = sum(whistle), by(participantcode)
-gen belief_whistle_clean = belief_whistle - whistle_total, after(belief_whistle)
-drop whistle_total
-egen cheat_total = sum(cheat), by(participantcode)
-gen belief_cheat_clean = belief_cheat - cheat_total, after(belief_cheat)
-drop cheat_total
-replace belief_whistle = belief_whistle/72
-replace belief_whistle_clean = belief_whistle_clean/66
-replace belief_cheat = belief_cheat/36
-replace belief_cheat_clean = belief_cheat_clean/24
-replace morality_employee = (morality_employee+2)/4
-replace morality_manager = (morality_manager+2)/4
-replace morality_public = (morality_public+2)/4
-replace firm_loyalty = (firm_loyalty+2)/4
-
 ** Sort data **
-sort index round
+drop index
+sort sessionlabel round
+gen index = _n
 order index, before(participantcode)
+sort index
