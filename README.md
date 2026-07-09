@@ -1,10 +1,10 @@
 ## Description
 
-This repository includes the data and the Stata code used in Ioannidis K. (2026). "The sound of silence: Does competition decrease whistleblowing? Evidence from a preregistered experiment"
+This repository includes the data and the Stata code used in Ioannidis K. (2026). "The sound of silence: Does competition decrease whistleblowing? Evidence from a preregistered experiment".
 
 ### Abstract
 
-We investigate whether market competition suppresses whistleblowing, using a high-powered, preregistered experiment (N=240). In a setting where firms either operate independently or compete in a tournament for market revenue, managers choose between a productive task and breaking the law to double firm surplus at the expense of the public, while employees decide whether to report misconduct at a personal cost. Aggregate results indicate that competition has a statistically null effect on whistleblowing. While we observe a directional increase in manager lawbreaking under competition, this does not translate into a significant erosion of the propensity to report misconduct. Exploratory analysis reveals heterogeneous treatment effects by population: whistleblowing decreased significantly in our Birmingham pool, but remained unaffected in Cambridge.
+We investigate whether market competition suppresses employees’ willingness to report managerial misconduct, using a preregistered laboratory experiment with two participant pools (N = 240). In a setting where firms either operate independently or compete in a tournament for market revenue, managers choose between a productive task and breaking the law to double firm surplus at the expense of the public, while employees decide whether they would report the manager if the manager chose to break the law. At the aggregate level, competition does not significantly reduce employees’ conditional willingness to blow the whistle. Although manager lawbreaking increases directionally under competition, this is not accompanied by a statistically significant decline in employees’ stated willingness to report misconduct. Exploratory analyses suggest possible heterogeneity across participant pools for employee reporting but not for manager lawbreaking.
 
 ### Software
 
@@ -18,8 +18,11 @@ The files are stored in two folders: Data, which contains data from the experime
    * Experimental Data.csv (*The raw data from the experiment in csv format*)
    * Experimental Codebook.md (*Codebook for ```Experimental Data.csv```*)
 2. Stata
+   * Balance.do (*Produces balance tables B1 and B2 in Appendix B*)
+   * Beliefs Judgements.do (*Produces Table 2*)
    * Data Analysis.do (*Calls and executes all other files*)
-   * Power Analysis.do (*Calls and executes the files for the power analysis results in footnote 12*)
+   * Heterogeneity.do (*Produces results for Observation 3*)
+   * Power Analysis.do (*Calls and executes the files for the power analysis results*)
    * Prepare Data.do (*Cleans raw experimental data and prepares it for analysis*)
    * Results.do (*Produces all results*)
    * Power 
