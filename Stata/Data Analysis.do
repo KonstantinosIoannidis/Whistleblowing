@@ -4,7 +4,9 @@ run "../Stata/Prepare Data.do"
 
 ** Subsection 2.4 **
 sum payoff_final if round == 1
+preserve
 do "../Stata/Power Analysis.do"
+restore
 
 ** Section 3 **
 * Results 1 & 2, Observation 1 *
